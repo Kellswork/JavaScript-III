@@ -121,3 +121,60 @@ const archer = new Humanoid({
 // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.
 // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
 // * Create two new objects, one a villain and one a hero and fight it out with methods!
+
+// function for Villian
+function Villain(player) {
+  Humanoid.call(this, player);
+}
+
+Villain.prototype.call = Object.create(Humanoid.prototype);
+
+Villain.prototype.life = function() {
+  return this.healthPoints > 1
+    ? (this.healthPoints = this.healthPoints - 1)
+    : this.destroy();
+};
+
+// function for Hero
+function Hero(player) {
+  Humanoid.call(this, player);
+}
+
+Hero.prototype = Object.create(Humanoid.prototype);
+
+Hero.prototype.life = function() {
+  return this.healthPoints > 1
+    ? (this.healthPoints = this.healthPoints - 1)
+    : this.destroy();
+};
+
+
+const hero = new Hero({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 3,
+    height: 2
+  },
+  healthPoints: 6,
+  name: "Uche",
+  team: "The Round Table",
+  weapons: ["Giant Sword", "Shield"],
+  language: "Common Tongue"
+});
+
+const villain = new Villain({
+  createdAt: new Date(),
+  dimensions: {
+    length: 1,
+    width: 3,
+    height: 2
+  },
+  healthPoints: 5,
+  name: "Mark",
+  team: "The Round Table",
+  weapons: ["Giant Sword", "Shield"],
+  language: "Common Tongue"
+});
+
+console.log(hero.life());
