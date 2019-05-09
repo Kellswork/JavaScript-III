@@ -177,4 +177,4 @@ const villain = new Villain({
   language: "Common Tongue"
 });
 
-console.log(hero.life());
+ console.log(hero.life());

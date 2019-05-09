@@ -1,15 +1,15 @@
 /* The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. if this is used in an object without any reference to that object, it will automically refer to the window object.
+* 1. If `this` is used in an object without any reference to that object, it will automically refer to the window object.
 
-* 2. when you create an object that has properties and methods in it. while trying to access the method or the property
+* 2. When you create an object that has properties and methods in it. while trying to access the method or the property,
      you type the object name dot the property or method, the object name is changed to 'this' dot method.
 
-* 3. Constructor functions are used to create an object. an instance or duplicate of the object is created 
-     when we use the new keyword before the constructor function and stored in a variable.
+* 3. Constructor functions are used to create an object. An instance or duplicate of the object is created 
+     when we use the new keyword while invoking the constructor function.
 
-* 4. call and apply is used when you expliticly want to access this.
+* 4. Call and apply is used when you expliticly want to access this.
 *
 * write out a code example of each explanation above
 */
